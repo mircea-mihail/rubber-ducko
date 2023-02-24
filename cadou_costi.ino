@@ -15,17 +15,13 @@
 /*
 Fetching IP...
 sharing location (harta cu romania)
-
-uploading /Pictures...
-
-linking to the botnet
 */
 
 const int pin = 2;
 const int KEY_WAIT_TIME = 25;
 const int LOAD_WAIT_TIME = 1000;
 const int LOADING_BAR_LENGTH = 40;
-const int timeToWait[LOADING_BAR_LENGTH] = { 10, 15, 15, 20, 10, 60, 10, 11};
+const int timeToWait[LOADING_BAR_LENGTH] = { 10, 15, 15, 20, 10, 5, 5, 5};
 
 
 void setup() {
@@ -58,7 +54,7 @@ void typePhrase(char* s){
 void loadingBar(){
   for(int i = 0; i < LOADING_BAR_LENGTH; i++){
     typeKey('#');
-    delay(timeToWait[i/5] * 3);
+    delay(timeToWait[i/5] * 2);
   }
   typeKey('\n');
 }
@@ -74,22 +70,45 @@ void endPhase(){
   typePhrase("' >> la_multi_ani.txt\n");
 }
 
+  //ascii 0 - 48
+  //ascii 9 - 57
+const int ASCII_OFFSET = 48;
+const int loadPhase[10] = {4, 16, 23, 55, 56, 59, 71, 88, 97, 99};
+
 void loadingPercentage(){
-  for(int i = 0; i < 99; i++){
-    if(i < 10){
-      typeKey((char)i);
+    for(int i = 0; i < 10; i++){
+    if(loadPhase[i] < 10){
+      typeKey(loadPhase[i] + ASCII_OFFSET);
+      typeCombination(KEY_LEFT_SHIFT, 5 + ASCII_OFFSET);
     }
     else{
-      typeKey((char)(i/10));
-      typeKey((char)(i%10));
+      typeKey((loadPhase[i]/10) + ASCII_OFFSET);
+      typeKey((loadPhase[i]%10) + ASCII_OFFSET);
+      typeCombination(KEY_LEFT_SHIFT, 5 + ASCII_OFFSET);
     }
-    delay(10);
+    delay(100);
     typeKey(KEY_BACKSPACE);
-    if(i >= 10){
+    typeKey(KEY_BACKSPACE);
+
+    if(loadPhase[i] >= 10){
       typeKey(KEY_BACKSPACE);
     }
   }
-  typePhrase("100\n");
+  typePhrase("100%\n");
+}
+
+const int DOT_WAIT_TIME = 500;
+
+void loadingDots(){
+  for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 3; i++){
+      typeKey('.');
+      delay(DOT_WAIT_TIME);
+    }
+    typeKey(KEY_BACKSPACE);
+    typeKey(KEY_BACKSPACE);
+    typeKey(KEY_BACKSPACE);
+  }
 }
 
 //looks like it doesn't work unless i put the code in the loop
@@ -97,12 +116,13 @@ void loop() {
   if (digitalRead(pin)) {
     // this is a comment
     initPhase();
+    
+    //*
+    //internet related
 
-    typePhrase("deleting all files...\n");
-    loadingBar();
-    typePhrase("Done\n\n");
 
-    typePhrase("replacing /rust with /c...\n");
+
+    typePhrase("Uploading /Pictures...\n");
     loadingBar();
     typePhrase("Done\n\n");
 
@@ -110,10 +130,19 @@ void loop() {
     loadingPercentage();
     typePhrase("Done\n\n");
 
+    typePhrase("Linking the system to the botnet... \n");
+    loadingPercentage();
+    typePhrase("Done\n\n");
+    
+    typePhrase("deleting all files...\n");
+    loadingBar();
+    typePhrase("Done\n\n");
+
+    //*/
     endPhase();
   } 
   else {
   
   }
-  delay(10000);
+  delay(5000);
 }
