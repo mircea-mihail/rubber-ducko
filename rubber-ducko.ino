@@ -97,7 +97,7 @@ void loadingPercentage(){
 const int DOT_WAIT_TIME = 200;
 
 void loadingDots(int less_loops = 0){
-  for(int i = 0; i < 4 - less_loops; i++){
+  for(int i = 0; i < 3 - less_loops; i++){
     for(int i = 0; i < 3; i++){
       typeKey('.');
       delay(DOT_WAIT_TIME);
@@ -105,6 +105,10 @@ void loadingDots(int less_loops = 0){
     typeKey(KEY_BACKSPACE);
     typeKey(KEY_BACKSPACE);
     typeKey(KEY_BACKSPACE);
+  }
+  for(int i = 0; i < 3; i++){
+    typeKey('.');
+    delay(DOT_WAIT_TIME);
   }
 }
 
