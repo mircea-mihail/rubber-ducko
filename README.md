@@ -4,7 +4,7 @@ This is my arduino equivalent to the famous rubber ducky. As the real thing cost
 
 ## About
 
-To "type" the keys the code uses the <keyboard.h> library. In order to change the payload a connection between pin 2 and GND needs to be made. To ensure the delivery of the payload, a connection between pin 2 and 5V needs to be made, but in my experience if no connection is made in general, the arduino sees a connection to 5V rather than gibberish or one to GND.
+To "type" the keys, the code uses the <keyboard.h> library. In order to change the Arduino's code, a connection needs to be made between pin 2 and GND. To ensure the delivery of the payload, a connection between pin 2 and 5V needs to be made, but, in my experience, if no connection is made in general, the arduino sees a connection to 5V rather than gibberish or one to GND.
 
 ## The code
 
