@@ -8,7 +8,7 @@ In order to edit or replace the Arduino's code, a connection needs to be made be
 
 ## The code
 
-To "type" the keys, the code uses the <keyboard.h> library. To make my life easier, I implemented the typeKey(), typePhrase() and typeCombination() functions that, well, type a key, a phrase or a combination such as CTRL+T.
+To "type" the keys, the code uses the <keyboard.h> library. To make my life easier, I implemented the typeKey(), typePhrase() and typeCombination() functions that, well, type a key, a phrase and a combination such as CTRL+T.
 
 ## The look
 
