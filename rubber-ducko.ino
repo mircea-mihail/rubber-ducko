@@ -53,7 +53,7 @@ void typePhrase(char* s){
 void loadingBar(){
   for(int i = 0; i < LOADING_BAR_LENGTH; i++){
     typeKey('#');
-    delay(bar_wait[i/5] * 2);
+    delay(bar_wait[i/5] * 3);
   }
   typeKey('\n');
 }
@@ -96,8 +96,8 @@ void loadingPercentage(){
 
 const int DOT_WAIT_TIME = 200;
 
-void loadingDots(){
-  for(int i = 0; i < 4; i++){
+void loadingDots(int less_loops = 0){
+  for(int i = 0; i < 4 - less_loops; i++){
     for(int i = 0; i < 3; i++){
       typeKey('.');
       delay(DOT_WAIT_TIME);
@@ -110,11 +110,15 @@ void loadingDots(){
 
 void funnyProcesses(){
   typePhrase("Fetching IP");
+  loadingDots(2);
+  typePhrase("\nDone\n\n");
+
+  typePhrase("Triangulating your exact coordinates using NASA satellites");
   loadingDots();
   typePhrase("\nDone\n\n");
 
-  typePhrase("Finding world map coordinates");
-  loadingDots();
+  typePhrase("Sending organ collectors (the musical type)");
+  loadingDots(3);
   typePhrase("\nDone\n\n");
 
   typePhrase("Downloading RAM... ");
@@ -133,7 +137,7 @@ void funnyProcesses(){
   loadingBar();
   typePhrase("Done\n\n");
 
-  typePhrase("replacing all rust driver...\n");
+  typePhrase("Replacing all rust code with vulnerable C99 alternatives...\n");
   loadingBar();
   typePhrase("Done\n\n");
 
