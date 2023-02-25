@@ -13,8 +13,7 @@ To make my life easier, I implemented the typeKey(), typePhrase() and typeCombin
 ## The look
 
 This is more of a gimmik rather than a practical hacking device. Although it does act as you'd expect a rubber ducky to act, the size of the arduino makes it not so hidden. Also, the actual rubber duck it's attached to is likely draw some attention:
-![the board](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-arduino.jpg) | 
-![the duck](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-final-ducko.jpg) |  
-![the final product](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-ducko-in-action.jpg)
+:-------------------------:|:-------------------------:|:-------------------------:
+![the board](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-arduino.jpg) | ![the duck](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-final-ducko.jpg) | ![the final product](https://github.com/mircea-mihail/rubber-ducko/blob/main/the-ducko-in-action.jpg)
 
 
