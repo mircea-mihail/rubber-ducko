@@ -96,7 +96,7 @@ void loadingPercentage(){
   typePhrase("100%\n");
 }
 
-const int DOT_WAIT_TIME = 300;
+const int DOT_WAIT_TIME = 200;
 
 void loadingDots(){
   for(int i = 0; i < 4; i++){
@@ -110,41 +110,47 @@ void loadingDots(){
   }
 }
 
+void funnyProcesses(){
+  typePhrase("Fetching IP");
+  loadingDots();
+  typePhrase("\nDone\n\n");
+
+  typePhrase("Finding world map coordinates");
+  loadingDots();
+  typePhrase("\nDone\n\n");
+
+  typePhrase("Downloading RAM... ");
+  loadingPercentage();
+  typePhrase("Done\n\n");
+
+  typePhrase("Linking the system to the botnet... ");
+  loadingPercentage();
+  typePhrase("Done\n\n");
+
+  typePhrase("Uploading /Pictures to fake chinese Kaufland site for cash cash...\n");
+  loadingBar();
+  typePhrase("Done\n\n");
+
+  typePhrase("Renaming Shellsec to MirceaSec for clout...\n");
+  loadingBar();
+  typePhrase("Done\n\n");
+
+  typePhrase("Encrypting all files for ransom...\n");
+  loadingBar();
+  typePhrase("Done\n\n");
+}
+
 //looks like it doesn't work unless i put the code in the loop
 void loop() {
   if (digitalRead(pin)) {
     // this is a comment
     initPhase();
     
-    //*
-    typePhrase("Fetching IP");
-    loadingDots();
-    typePhrase("\nDone\n\n");
+    funnyProcesses();
 
-    typePhrase("Finding world map coordinates");
-    loadingDots();
-    typePhrase("\nDone\n\n");
-
-    typePhrase("Downloading RAM... ");
-    loadingPercentage();
-    typePhrase("Done\n\n");
-
-    typePhrase("Linking the system to the botnet... ");
-    loadingPercentage();
-    typePhrase("Done\n\n");
-
-    typePhrase("Uploading /Pictures...\n");
-    loadingBar();
-    typePhrase("Done\n\n");
-
-    
-
-    typePhrase("deleting all files...\n");
-    loadingBar();
-    typePhrase("Done\n\n");
-
-    //*/
     endPhase();
+
+    typePhrase("xdg-open https://github.com/mircea-mihail/rubber-ducko \n");
   } 
   else {
   
