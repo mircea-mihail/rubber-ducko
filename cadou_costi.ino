@@ -23,7 +23,6 @@ const int LOAD_WAIT_TIME = 1000;
 const int LOADING_BAR_LENGTH = 40;
 const int timeToWait[LOADING_BAR_LENGTH] = { 10, 15, 15, 20, 10, 5, 5, 5};
 
-
 void setup() {
   Keyboard.begin();
   pinMode(pin, INPUT);
@@ -97,10 +96,10 @@ void loadingPercentage(){
   typePhrase("100%\n");
 }
 
-const int DOT_WAIT_TIME = 500;
+const int DOT_WAIT_TIME = 300;
 
 void loadingDots(){
-  for(int i = 0; i < 5; i++){
+  for(int i = 0; i < 4; i++){
     for(int i = 0; i < 3; i++){
       typeKey('.');
       delay(DOT_WAIT_TIME);
@@ -118,22 +117,28 @@ void loop() {
     initPhase();
     
     //*
-    //internet related
+    typePhrase("Fetching IP");
+    loadingDots();
+    typePhrase("\nDone\n\n");
 
+    typePhrase("Finding world map coordinates");
+    loadingDots();
+    typePhrase("\nDone\n\n");
 
+    typePhrase("Downloading RAM... ");
+    loadingPercentage();
+    typePhrase("Done\n\n");
+
+    typePhrase("Linking the system to the botnet... ");
+    loadingPercentage();
+    typePhrase("Done\n\n");
 
     typePhrase("Uploading /Pictures...\n");
     loadingBar();
     typePhrase("Done\n\n");
 
-    typePhrase("Downloading RAM... \n");
-    loadingPercentage();
-    typePhrase("Done\n\n");
-
-    typePhrase("Linking the system to the botnet... \n");
-    loadingPercentage();
-    typePhrase("Done\n\n");
     
+
     typePhrase("deleting all files...\n");
     loadingBar();
     typePhrase("Done\n\n");
